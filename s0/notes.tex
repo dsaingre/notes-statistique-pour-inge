@@ -1,0 +1,163 @@
+\documentclass[10pt]{scrartcl}
+
+%----------------
+% CONFIG
+%----------------
+
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0pt, landscape]{geometry}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amsfonts} % for Number set
+\usepackage{amsmath}
+
+\usepackage[
+colorlink=false,
+pdftitle={Resume S1},
+pdfauthor={Dimitri Saingre},
+pdfsubject={Statistique Descriptive}
+]{hyperref}
+
+\setlength{\unitlength}{1mm}
+\setlength{\parindent}{0pt}
+
+\newcommand{\sectiontitle}[1]{\paragraph{#1} \ \\}
+
+%----------------
+
+\begin{document}
+
+\begin{picture}(297,210)
+
+%----------------
+% TITLE
+%----------------
+
+\put(10,200){
+\begin{minipage}[t]{85mm}
+\section*{Thème 0 : Statistique Descriptive}
+\end{minipage}
+}
+
+%----------------
+% FIRST COLUMN
+%----------------
+
+\put(10,180){
+\begin{minipage}[t]{85mm}
+
+\sectiontitle{Introduction}
+\textbf{Statistique descriptive} : permet de décrire les données à l'aide de graphiques et de paramètres d'une façon compréhensible et utilisable\\
+\textbf{Probabilité} : permet de modéliser efficacement les phénomènes étudiés en statistiques \\
+\textbf{Statistique inférencielle} : permet de faire des prévisions ou généralisations à toute une population à partir d'échantillons\\
+\textbf{Régression linéaire} : permet d'étudier la relation existante entre deux variables. Met en place des modèles de prévisions et des outils pour
+valider ceux ci\\
+
+\sectiontitle{Vocabulaire}
+\begin{tabular}{|l|c|r|}
+  \hline
+  \textbf{Ensembliste} & \textbf{Statistique} \\
+  \hline
+  Ensemble & Population ($\Omega$) \\
+  Application & Variable / Caractère \\
+  Elément & Individu / unité statistique \\
+  Sous-Element & Sous-population \\
+  Cardinal & Effectif \\
+  \hline
+\end{tabular}
+\textbf{Fréquence} d'une sous population $E$ de $\Omega$ : 
+$f(E) = \frac{Card(E)}{Card(\Omega)} \in [0,1]$ \\
+
+\sectiontitle{Variables ou caractères}
+Variables \textbf{qualitatives} : appartenance à une catégorie\\
+Variables \textbf{quantitative}/\textbf{numériques} : taille, poids, volume...\\
+Variables \textbf{discrète} : nombre fini ou indéfini dénombrable de valeurs observées\\
+Soit une variable discrète $X$, l'ensemble des valeurs (modalités) prises par $X$ est l'ensemble :\\
+$X(\Omega) = \{x_{1}, x_{2}, \dots, x_{n} \dots\} = \{x_{i}, i \in \mathbb{N}\}$ \\
+
+\sectiontitle{Loi d'une variable quantitative, fonction de répartition}
+La \textbf{loi} ou \textbf{distribution empirique} d'une variable $X$ sur $\Omega$ est la 
+donnée de la fréquence de chaque classe définie par la variable $X$
+\begin{itemize}
+\item Si $X$ quantitative ou qualitative discrète, sa loi est définie par la fréquence de
+chaque sous-population du type $\{X = x_{i}\} = \{\omega \in \Omega, X(\omega) = x_{i}\}$ ;
+\end{itemize}
+
+\end{minipage}
+}
+
+%----------------
+% SECOND COLUMN
+%----------------
+
+\put(105,180){
+\begin{minipage}[t]{85mm}
+\begin{itemize}
+\item Si $X$ continue et si les valeurs possibles de $X$ sont réparties en classes $C_{i}$,
+la loi est la donnée de chaque fréquence des sous-populations $\{X \in C_{i}\} = \{\omega \in \Omega, X(\omega) \in C_{i}\}$ 
+\end{itemize}
+La \textbf{fonction de répartition empirique} de $X$ est la fonction, notée $F_{x}$, qui à $x \in \mathbb{R}$ associe
+la fréquence de la sous-population $\{X \leq x\}$ :\\
+\begin{equation*}
+  \begin{split}
+    F_{X} : & \mathbb{R} \to \mathbb{R} \\
+    & x \mapsto F_{X}(x) = \frac{Card\{ \omega \in \Omega, X(\omega) \leq x\}}{Card \Omega}
+  \end{split}
+\end{equation*} 
+
+\sectiontitle{Grandeurs statistiques usuelles}
+La \textbf{moyenne} du caractère $X$ est la quantité \\
+$\bar{x} = \frac{1}{n} \sum\limits_{i=1}^{n} x_{i}$\\
+La moyenne est une statistique \textit{peu robuste} (sensible aux valeurs extrêmes)\\
+\textbf{Proposition : } si $Y = aX + b$ avec $a,b \in \mathbb{R}$, alors : $\bar{y} = a\bar{x} + b$\\
+Le \textbf{mode} ou \textbf{classe modale} d'une distribution statistique est la valeur ou la classe
+du caractère qui correspond à la plus grande fréquence.\\
+La \textbf{mediane} du caractère $X$ est la valeur $M_{e}$ telle que, en notant $f(\dots)$ la fréquence :
+$f(\{X \leq M_{e}\}) \geq \frac{1}{2} et f(\{X \geq M_{e}\}) \geq \frac{1}{2}$\\
+Les \textbf{quartiles} $Q_{1}, Q_{2} et Q_{3}$ sont les valeurs permettant de diviser la population en quatre sous-populations
+d'effectif égaux, représentant chacune 25\% de la population totale.\\
+L'\textbf{étendue} est la différence entre les valeurs extrêmes du caractère : $\omega = x_{max} - x_{min}$\\
+La \textbf{variance} de la variable $X$ est la quantitié $\sigma^2 = \frac{1}{n} \sum\limits_{i=1}^{n} (x_{i} - \bar{x})^{2} = \frac{1}{n} \sum\limits_{i=1}^{n} x_{i}^{2} - \bar{x}^{2}$ 
+représentant la moyenne des carrés des écarts entre les observations et leur moyenne\\
+\textbf{Proposition: } transformation affine sur la variance : si on pose $Y = aX+b$, $\sigma_{Y}^2 = a^2\sigma_{X}^2$\\
+L'\textbf{écart-type} de $X$ est la racine carrée $\sigma$ de la variance
+
+\end{minipage}
+}
+
+%----------------
+% THIRD COLUMN
+%----------------
+
+\put(200,180){
+\begin{minipage}[t]{85mm}
+\sectiontitle{Distributions à deux caractères}
+L'\textbf{effectif marginal en} $X$ et la \textbf{fréquence marginale en} $X$ de la classe $C_{i}$ :\\
+$n_{i.} = \sum\limits_{j=1}^{s} n_{ij}$ et $f_{i.} = \frac{n_{i.}}{n} = \sum\limits_{j=1}^{s} f_{ij}$\\
+La \textbf{loi conditionnelle de} $Y$ \textbf{sachant} $X \in C_{i}$ est la donnée, pour tout $j\in\{1,\dots,s\}$
+des fréquences relatives des classes $D_{j}$ par rapport à $C_{i}$ : $f_{j/i} = \frac{n_{ij}}{n_{i.}} = \frac{f_{ij}}{f_{i.}}$\\
+Les deux variables $X$ et $Y$ sont dites \textbf{indépendantes} si la loi conditionnelle de $Y$ sachant $X \in C_{i}$ ne 
+dépend pas de $i$\\
+
+\sectiontitle{Cas de deux variances quantitatives}
+La \textbf{covariance} de deux variables quantitatives $X$ et $Y$ est : $\mathbb{C}$ov$(X,Y) = \frac{1}{n}\sum\limits_{i=1}^{n}(x_{i} - \bar{x})(y_{i} - \bar{y})$\\
+La covariance permet de quantifier la liaison entre les deux variables (positive = même sens = \textbf{liaison positive}, 
+négatif = sens contraires = \textbf{liaison négative})\\
+\textbf{Propriétés de la covariance: } \\
+\textit{(1) La covariance est symétrique :} $\mathbb{C}$ov $(X,Y) = \mathbb{C}$ov $(Y,X)$\\
+\textit{(2) Covariance de X avec elle-même :} $\mathbb{C}$ov $(X,X) = \mathbb{V}(X)$\\
+\textit{(3) Transformation affine :} $\mathbb{C}$ov $(aX+b,cY+d) = ac\mathbb{C}$ov $(Y,X)$\\
+\textit{(4) Variance d'une somme :} $\mathbb{V}(X+Y) = \mathbb{V}(X) + 2\mathbb{C}$ov$(X,Y) + \mathbb{V}(Y)$\\
+\textit{(5) Inégalité de Cauchy-Schwartz :} $\lvert \mathbb{C}$ov $(X,Y)\rvert \leq \sigma(X) \sigma(Y)$ avec égalité
+si et seulement si il existe une relation affine entre $X$ et $Y : Y = aX+b$ ou $X=cY+d$ \\
+\textit{(6) Cas de variables indépendantes :} si $X$ et $Y$ sont indépendantes, leur covariance est nulle. La réciproque est \underline{fausse} \\
+Lorsque deux variables ont une covariance nulle, on dit qu'elles sont \textbf{décorrélées}.
+
+\end{minipage}
+}
+
+\end{picture}
+
+\end{document}
