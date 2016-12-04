@@ -1,0 +1,97 @@
+\documentclass[10pt]{scrartcl}
+
+%----------------
+% CONFIG
+%----------------
+
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0pt, landscape]{geometry}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amsfonts} % for Number set
+\usepackage{amsmath}
+
+\usepackage[
+colorlink=false,
+pdftitle={Resume S1},
+pdfauthor={Dimitri Saingre},
+pdfsubject={Notions de probabilités}
+]{hyperref}
+
+\setlength{\unitlength}{1mm}
+\setlength{\parindent}{0pt}
+
+\newcommand{\sectiontitle}[1]{\paragraph{#1} \ \\}
+
+%----------------
+
+\begin{document}
+
+\begin{picture}(297,210)
+
+%----------------
+% TITLE
+%----------------
+
+\put(10,200){
+\begin{minipage}[t]{85mm}
+\section*{Thème 1 : Notions de probabilités}
+\end{minipage}
+}
+
+%----------------
+% FIRST COLUMN
+%----------------
+
+\put(10,180){
+\begin{minipage}[t]{85mm}
+\sectiontitle{Expériences aléatoires et modèles probabilistes}
+\textbf{Axiomatique de Kolmogorov} : l'ensemble $\Omega$ de tous les résultats possibles d'une expérience 
+spécifiée par un protocole expérimental donné est appelé \textbf{univers}. On dira aussi que $\Omega$ est
+l'espace des états ou espaces des possibles de l'expérience aléatoire. \\
+\textbf{Espace probabilisable} : un espace probabilisable est un couple $(\Omega,T)$, où $\Omega$ est un 
+ensemble et $T$ une tribu de $\Omega$, càd un ensemble de parties de $\Omega$ vérifiant les propriétés
+suivantes : \\
+\begin{itemize}
+\item $\Omega \in T$
+\item Si $A \in T$, alors $\bar{A} \in T$ où $\bar{A}$ est le complémentaire de $A$ dans $\Omega$
+\item Si $(A_n)_{n\in\mathbb{N}^*}$ est une suite d'éléments de $T$, alors $\bigcup\limits_{n=1}^{\infty}A_n \in T$
+\end{itemize}
+Les éléments de $T$ sont appelés événements. En particulier, pour tout $\omega \in \Omega$, le singleton
+$\{\omega\}$ est appelé événement élémentaire.\\
+Un \textbf{espace probabilisé} est un triplet $(\Omega,T,\mathbb{P})$ où $(\Omega,T)$ est un espace probabilisable
+et $\mathbb{P}$ une mesure de probabilité sur $T$, càd une application de $T$ dans $[0,1]$, telle que :
+\begin{itemize}
+\item $\mathbb{P}(\Omega) = 1$ \textit{[Condition de normalisation]}
+\item Soit $(A_n)_{n\in\mathbb{N}^*}$ une suite d'événements disjoints 2 à 2, 
+$\mathbb{P}(\bigcup\limits_{n=1}^\infty A_n) = \sum\limits_{n=1}^\infty \mathbb{P}(A_n)$ \textit{[$\sigma$-additivité]}
+\end{itemize}
+
+\end{minipage}
+}
+
+%----------------
+% SECOND COLUMN
+%----------------
+
+\put(105,180){
+\begin{minipage}[t]{85mm}
+
+\end{minipage}
+}
+
+%----------------
+% THIRD COLUMN
+%----------------
+
+\put(200,180){
+\begin{minipage}[t]{85mm}
+
+\end{minipage}
+}
+
+\end{picture}
+
+\end{document}
